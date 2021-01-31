@@ -1,1 +1,9 @@
-<p>inventorylist works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <app-inventorydetail
+      *ngFor="let inventoryEl of computers"
+      [computer]="inventoryEl"
+      [id]="inventoryEl.id"
+    ></app-inventorydetail>
+  </div>
+</div>

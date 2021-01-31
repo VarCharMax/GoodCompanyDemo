@@ -24,8 +24,8 @@ namespace GoodCompanyDemo
 
             services.AddControllersWithViews().AddJsonOptions(options => {
                 options.JsonSerializerOptions.WriteIndented = true;
-                // options.JsonSerializerOptions.PropertyNamingPolicy = null;
-            });
+                options.JsonSerializerOptions.IgnoreNullValues = true;
+            }).AddNewtonsoftJson();
 
             services.AddSpaStaticFiles(configuration =>
             {

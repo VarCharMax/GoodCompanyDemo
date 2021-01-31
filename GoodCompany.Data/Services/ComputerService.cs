@@ -25,8 +25,8 @@ namespace GoodCompany.Data.Services
             string mdDesk = await svc.Add("Desktop");
             string mdLT = await svc.Add("Laptop");
 
-            _computers.Add(new PCComputer { Brand = "Dell", ProcessorName = "Pentium", Quantity = 3, RamSlots = 2, UsbPorts = 4, TypeName = mdDesk });
-            _computers.Add(new LaptopComputer { Brand = "Lenovo", ProcessorName = "Pentium", Quantity = 2, ScreenSize = 15, TypeName = mdLT });
+            _computers.Add(new PCComputer { Brand = "Dell", ProcessorName = "Pentium", Quantity = 3, RamSlots = 2, UsbPorts = 4, TypeName = mdDesk, ImageUrl = "https://www.digitalstorm.com/img/products/lumos/2020-hero-image-1.jpg" });
+            _computers.Add(new LaptopComputer { Brand = "Lenovo", ProcessorName = "Pentium", Quantity = 2, ScreenSize = 15, TypeName = mdLT, ImageUrl = "https://i.pcmag.com/imagery/roundups/06PC8eeQkHaoNm2FyCAxigV-15.jpg" });
         }
 
         public Task<ComputerModel> Add(ComputerModel computerModel)

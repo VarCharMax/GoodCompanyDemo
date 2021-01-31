@@ -9,7 +9,7 @@ namespace GoodCompanyDemo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ComputerController : Controller
+    public class ComputerController : ControllerBase
     {
         private readonly IComputerService _computerService;
 
@@ -94,7 +94,8 @@ namespace GoodCompanyDemo.Controllers
             return existingComputer;
         }
 
-        public async Task<ActionResult<ComputerModel>> PostComputer(ComputerModel computer)
+        [HttpPost]
+        public async Task<ActionResult<ComputerModel>> PostComputer(GenericComputer computer)
         {
             if (computer == null)
             {
@@ -106,24 +107,28 @@ namespace GoodCompanyDemo.Controllers
             switch (computer.TypeName)
             {
                 case "Desktop":
-                    PCComputer newPC = computer as PCComputer;
-                    newPC = new PCComputer {
-                        Id = newPC.Id,
-                        Brand = newPC.Brand,
-                        ProcessorName = newPC.ProcessorName,
-                        Quantity = newPC.Quantity,
-                        RamSlots = newPC.RamSlots,
-                        UsbPorts = newPC.UsbPorts
+                    PCComputer newPC = new PCComputer {
+                        Id = Guid.NewGuid(),
+                        TypeName = computer.TypeName,
+                        Brand = computer.Brand,
+                        ProcessorName = computer.ProcessorName,
+                        Quantity = computer.Quantity,
+                        UsbPorts = computer.UsbPorts,
+                        RamSlots = computer.RamSlots,
+                        ImageUrl = computer.ImageUrl,
+
                     };
                     cp = newPC;
                     break;
                 case "Laptop":
-                    LaptopComputer newLP = computer as LaptopComputer;
-                    newLP = new LaptopComputer {
-                        Id = newLP.Id,
-                        Brand = newLP.Brand,
-                        ProcessorName = newLP.ProcessorName,
-                        ScreenSize = newLP.ScreenSize
+                    LaptopComputer newLP = new LaptopComputer {
+                        Id = Guid.NewGuid(),
+                        TypeName = computer.TypeName,
+                        Brand = computer.Brand,
+                        ProcessorName = computer.ProcessorName,
+                        Quantity = computer.Quantity,
+                        ImageUrl = computer.ImageUrl,
+                        ScreenSize = computer.ScreenSize
                     };
                     cp = newLP;
                     break;

@@ -9,10 +9,13 @@ import { InventoryListComponent } from 'src/app/inventory/inventorylist/inventor
 import { InventoryDetailComponent } from 'src/app/inventory/inventorydetail/inventorydetail.component';
 import { ManageComponent } from 'src/app/inventory/manage/manage.component';
 import { AppComponent } from './app.component';
+import { BaseFormComponent } from 'src/app/inventory/manage/base.form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BaseFormComponent,
     HeaderComponent,
     InventoryComponent,
     InventoryListComponent,
@@ -27,6 +30,7 @@ import { AppComponent } from './app.component';
       { path: '', component: InventoryComponent, pathMatch: 'full' },
       { path: 'manage', component: ManageComponent, pathMatch: 'full' },
     ]),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

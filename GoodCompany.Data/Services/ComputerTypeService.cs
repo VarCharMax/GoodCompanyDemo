@@ -25,6 +25,11 @@ namespace GoodCompany.Data.Services
 
         public Task<string> Add(string name)
         {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new Exception();
+            }
+
             string ec = null;
 
             try
@@ -41,9 +46,9 @@ namespace GoodCompany.Data.Services
                 throw new DuplicateTypeException();
             }
 
-            _computerTypes.Add(ec);
+            _computerTypes.Add(name);
 
-            return Task.FromResult(ec);
+            return Task.FromResult(name);
         }
 
         public Task<string> Get(string name)

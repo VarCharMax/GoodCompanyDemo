@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { BaseService } from './base.service';
 import { Observable } from 'rxjs';
 import { Computer } from '../models/computer';
@@ -27,7 +27,9 @@ export class ComputerService extends BaseService {
   }
 
   post<Computer>(item): Observable<Computer> {
-    const url = this.baseUrl + 'api/computer/' + item.id;
+    console.log('posting ...' + item.brand);
+    const url = this.baseUrl + 'api/computer/';
+    console.log('brand: ' + item.brand);
     return this.http.post<Computer>(url, item);
   }
 

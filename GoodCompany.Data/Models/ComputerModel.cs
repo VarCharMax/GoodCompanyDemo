@@ -2,7 +2,7 @@
 
 namespace GoodCompany.Data.Models
 {
-    public abstract class ComputerModel : IEquatable<ComputerModel>
+    public class ComputerModel : IEquatable<ComputerModel>
     {
         public ComputerModel()
         {

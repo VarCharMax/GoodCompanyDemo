@@ -1,1 +1,40 @@
-<p>inventorydetail works!</p>
+<a
+  style="cursor: pointer"
+  [routerLink]="[id]"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+>
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">
+      <span style="font-weight: bold">Type:</span> {{ computer.typeName }}
+    </h4>
+    <p class="list-group-item-text">
+      <span style="font-weight: bold">Brand:</span> {{ computer.brand }}
+    </p>
+    <p class="list-group-item-text">
+      <span style="font-weight: bold">Processor Name:</span>
+      {{ computer.processorName }}
+    </p>
+    <p class="list-group-item-text">
+      <span style="font-weight: bold">Quantity:</span> {{ computer.quantity }}
+    </p>
+    <p class="list-group-item-text">
+      <span style="font-weight: bold">RAM slots:</span> {{ computer.ramSlots }}
+    </p>
+    <p class="list-group-item-text">
+      <span style="font-weight: bold">USB slots:</span> {{ computer.usbPorts }}
+    </p>
+    <p class="list-group-item-text">
+      <span style="font-weight: bold">Screen Size:</span>
+      {{ computer.screenSize }}
+    </p>
+  </div>
+  <span class="pull-right">
+    <img
+      [src]="computer.imageUrl"
+      alt="{{ computer.typeName }}"
+      class="img-responsive"
+      style="max-height: 50px"
+    />
+  </span>
+</a>

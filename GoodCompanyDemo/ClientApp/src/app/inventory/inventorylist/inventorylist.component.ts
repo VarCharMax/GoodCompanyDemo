@@ -19,8 +19,6 @@ export class InventoryListComponent implements OnInit {
   loadData() {
     this.computerService.getComputers<Computer[]>().subscribe((result) => {
       this.computers = result;
-      console.log('Computers length:' + this.computers.length);
-      console.log(this.computers[0]);
     });
   }
 }
