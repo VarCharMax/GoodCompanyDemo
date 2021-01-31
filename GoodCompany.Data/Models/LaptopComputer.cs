@@ -4,7 +4,7 @@
     {
         public LaptopComputer() : base()
         {
-            this.TypeName = new ComputerType { Name = "Laptop" };
+            this.TypeName = "Laptop";
         }
         public int ScreenSize { get; set; }
     }

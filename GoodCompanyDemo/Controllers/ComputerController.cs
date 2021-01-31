@@ -61,7 +61,7 @@ namespace GoodCompanyDemo.Controllers
 
             ComputerModel updatedComputer;
 
-            switch (existingComputer.TypeName.Name)
+            switch (existingComputer.TypeName)
             {
                 case "Desktop":
                     PCComputer pcComputerToUpdate = computer as PCComputer;
@@ -103,7 +103,7 @@ namespace GoodCompanyDemo.Controllers
 
             ComputerModel cp;
 
-            switch (computer.TypeName.Name)
+            switch (computer.TypeName)
             {
                 case "Desktop":
                     PCComputer newPC = computer as PCComputer;

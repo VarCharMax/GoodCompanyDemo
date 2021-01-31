@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoodCompany.Data", "GoodCompany.Data\GoodCompany.Data.csproj", "{BFCD7762-75A6-4BDB-AB49-62EDF3C20C65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodCompany.Tests", "GoodCompany.Tests\GoodCompany.Tests.csproj", "{5D5DE852-F8A6-46BB-90DC-3341BC5B76E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoodCompany.Tests", "GoodCompany.Tests\GoodCompany.Tests.csproj", "{5D5DE852-F8A6-46BB-90DC-3341BC5B76E2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoodCompanyDemo", "GoodCompanyDemo\GoodCompanyDemo.csproj", "{9668C8FC-B4F3-40B2-AE41-8A04E27D9132}"
 EndProject

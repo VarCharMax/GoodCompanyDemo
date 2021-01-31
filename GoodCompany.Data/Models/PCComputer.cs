@@ -4,13 +4,11 @@
     {
         public PCComputer() : base()
         {
-            this.TypeName = new ComputerType { Name = "Desktop" };
+            this.TypeName = "Desktop";
         }
 
         public int UsbPorts { get; set; }
 
         public int RamSlots { get; set; }
-
-        public int Quantity { get; set; }
     }
 }

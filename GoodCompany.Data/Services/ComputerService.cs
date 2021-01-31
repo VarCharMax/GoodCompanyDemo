@@ -14,11 +14,23 @@ namespace GoodCompany.Data.Services
         public ComputerService()
         {
             _computers = new ConcurrentBag<ComputerModel>();
+
+            PopulateServices();
+        }
+
+        private async void PopulateServices()
+        {
+            ComputerTypeService svc = new ComputerTypeService();
+
+            string mdDesk = await svc.Add("Desktop");
+            string mdLT = await svc.Add("Laptop");
+
+            _computers.Add(new PCComputer { Brand = "Dell", ProcessorName = "Pentium", Quantity = 3, RamSlots = 2, UsbPorts = 4, TypeName = mdDesk });
+            _computers.Add(new LaptopComputer { Brand = "Lenovo", ProcessorName = "Pentium", Quantity = 2, ScreenSize = 15, TypeName = mdLT });
         }
 
         public Task<ComputerModel> Add(ComputerModel computerModel)
         {
-            // computerModel.Id = Guid.NewGuid();
             _computers.Add(computerModel);
 
             return Task.FromResult(computerModel);

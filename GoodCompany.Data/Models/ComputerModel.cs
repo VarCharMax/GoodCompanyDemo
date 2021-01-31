@@ -13,9 +13,11 @@ namespace GoodCompany.Data.Models
         }
 
         public Guid Id { get; set; }
-        public ComputerType TypeName { get; set; }
+        public string TypeName { get; set; }
         public string Brand { get; set; }
-        public ProcessorType ProcessorName { get; set; }
+        public string ProcessorName { get; set; }
+        public int Quantity { get; set; }
+        public string ImageUrl { get; set; }
 
         public override int GetHashCode()
         {
@@ -27,7 +29,7 @@ namespace GoodCompany.Data.Models
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
+            if (obj is null) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
             return Equals((ComputerModel)obj);
@@ -37,7 +39,7 @@ namespace GoodCompany.Data.Models
         {
             if (obj == null) return false;
 
-            if (this.Id == obj.Id && this.TypeName.Name == obj.TypeName.Name) return true;
+            if (this.Id == obj.Id && this.TypeName == obj.TypeName) return true;
 
             return false;
         }

@@ -3,32 +3,32 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
+import { HeaderComponent } from 'src/app/header/header.component';
+import { InventoryComponent } from 'src/app/inventory/inventory.component';
+import { InventoryListComponent } from 'src/app/inventory/inventorylist/inventorylist.component';
+import { InventoryDetailComponent } from 'src/app/inventory/inventorydetail/inventorydetail.component';
+import { ManageComponent } from 'src/app/inventory/manage/manage.component';
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent
+    HeaderComponent,
+    InventoryComponent,
+    InventoryListComponent,
+    InventoryDetailComponent,
+    ManageComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-    ])
+      { path: '', component: InventoryComponent, pathMatch: 'full' },
+      { path: 'manage', component: ManageComponent, pathMatch: 'full' },
+    ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

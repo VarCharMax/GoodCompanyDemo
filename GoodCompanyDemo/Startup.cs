@@ -2,7 +2,6 @@ using GoodCompany.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
-using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,6 +20,7 @@ namespace GoodCompanyDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IComputerService, ComputerService>();
+            services.AddSingleton<IComputerTypeService, ComputerTypeService>();
 
             services.AddControllersWithViews().AddJsonOptions(options => {
                 options.JsonSerializerOptions.WriteIndented = true;
@@ -46,7 +46,7 @@ namespace GoodCompanyDemo
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            app.UseHttpsRedirection(); 
             app.UseStaticFiles();
             if (!env.IsDevelopment())
             {
